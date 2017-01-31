@@ -21,12 +21,16 @@
 #include <string.h>
 #include <iostream>
 #include <memory>
+#include <thread>
+#include <chrono>
 
 #include "globalmessagingmgr.h"
 #include "rational.h"
 #include "rationalutils.h"
 #include "copyandswap.h"
 #include "avoireturnhandletointernalclassresource.h"
+#include <kernelcomp.h>
+#include <httpeventcomp.h>
 
 void SingletonTest()
 {
@@ -80,7 +84,16 @@ void AvoidReturnHandleTest()
     std::cout << arh.getHandle().a;
 }
 
+void Comp_KernelTest()
+{
+    HttpEventComp httpComp;
+    httpComp.Init();
+
+    ConnectionOpenEvent.ThrowEvent(nullptr);
+}
+
 int main()
 {
+    Comp_KernelTest();
     return 0;
 }

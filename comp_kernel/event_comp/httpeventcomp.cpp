@@ -2,6 +2,8 @@
 #include <eventapi.h>
 #include <string.h>
 #include <iostream>
+#include <thread>
+#include <chrono>
 
 HttpEventComp::HttpEventComp(): EventComp()
 {
@@ -22,5 +24,7 @@ bool HttpEventComp::Init()
 
 void HttpEventComp::onEvent(void *data)
 {
-    std::cout << __FUNCTION__ << '\n';
+    // should make threadpool to process the heavy load tasks here
+    std::cout << getName() << '\n';
+    return;
 }
