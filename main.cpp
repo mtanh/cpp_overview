@@ -82,7 +82,5 @@ void AvoidReturnHandleTest()
 
 int main()
 {
-
-
     return 0;
 }

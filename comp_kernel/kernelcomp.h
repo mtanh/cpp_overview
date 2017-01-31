@@ -14,7 +14,6 @@ public:
     ~KernelComp();
 
     bool RegisterEventComp(EventComp* comp);
-    KernelComp &getInstance();
     void ThrowEvent(void* data);
 
 private:

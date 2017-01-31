@@ -1,5 +1,6 @@
 #include "kernelcomp.h"
 #include "eventcomp.h"
+#include "httpeventcomp.h"
 
 KernelComp::KernelComp()
 {
@@ -39,7 +40,7 @@ void KernelComp::ThrowEvent(void *data)
             iter!=mEventList.end();
             ++iter)
         {
-//            iter->onEvent(iter, data);
+            (*iter)->onEvent(data);
         }
     }
 }

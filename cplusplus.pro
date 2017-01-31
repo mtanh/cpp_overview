@@ -2,6 +2,7 @@ TEMPLATE = app
 CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
+INCLUDEPATH += comp_kernel
 
 SOURCES += main.cpp \
     globalmessagingmgr.cpp \
