@@ -1,0 +1,14 @@
+#ifndef EVENTCODE_H
+#define EVENTCODE_H
+
+enum EventCode
+{
+    EVENT_INVALID = 0,
+    EVENT_CONN_OPEN,
+    EVENT_CONN_CLOSE,
+    EVENT_IMG_MSG,
+    EVENT_TEXT_MSG
+};
+
+#endif // EVENTCODE_H
+
