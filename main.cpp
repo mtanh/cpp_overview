@@ -31,6 +31,7 @@
 #include "avoireturnhandletointernalclassresource.h"
 #include <kernelcomp.h>
 #include <httpeventcomp.h>
+#include <threadcpp11.h>
 
 void SingletonTest()
 {
@@ -92,8 +93,18 @@ void Comp_KernelTest()
     ConnectionOpenEvent.ThrowEvent(nullptr);
 }
 
+void ThreadCpp11Test()
+{
+    EntryBase* entry = new ThreadEntry();
+    ThreadCpp11 simpleThread(entry);
+
+
+    simpleThread.startThread();
+    simpleThread.joinThread();
+}
+
 int main()
 {
-    Comp_KernelTest();
+    ThreadCpp11Test();
     return 0;
 }

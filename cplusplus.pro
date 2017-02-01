@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     comp_kernel/kernelcomp.cpp \
     comp_kernel/event_comp/httpeventcomp.cpp \
     threadcpp11.cpp
-QMAKE_CXXFLAGS += -std=c++11
+QMAKE_CXXFLAGS += -std=c++11 -pthread
+LIBS += -pthread
 
 HEADERS += \
     globalmessagingmgr.h \
