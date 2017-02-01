@@ -12,7 +12,8 @@ SOURCES += main.cpp \
     avoireturnhandletointernalclassresource.cpp \
     comp_kernel/eventapi.cpp \
     comp_kernel/kernelcomp.cpp \
-    comp_kernel/event_comp/httpeventcomp.cpp
+    comp_kernel/event_comp/httpeventcomp.cpp \
+    threadcpp11.cpp
 QMAKE_CXXFLAGS += -std=c++11
 
 HEADERS += \
@@ -28,5 +29,6 @@ HEADERS += \
     comp_kernel/eventcode.h \
     comp_kernel/throwable.h \
     comp_kernel/kernelcomp.h \
-    comp_kernel/httpeventcomp.h
+    comp_kernel/httpeventcomp.h \
+    threadcpp11.h
 
