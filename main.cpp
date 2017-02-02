@@ -77,10 +77,10 @@ void AvoidReturnHandleTest()
     h.b = 2;
 
     AvoiReturnHandle arh(h);
-//    InternalHandle tmp = arh.getHandle();
+    //    InternalHandle tmp = arh.getHandle();
     arh.getHandle().a = 3;
-//    tmp.a = 3;
-//    arh.getHandle().a = 3;
+    //    tmp.a = 3;
+    //    arh.getHandle().a = 3;
 
     std::cout << arh.getHandle().a;
 }
@@ -103,8 +103,19 @@ void ThreadCpp11Test()
     simpleThread.joinThread();
 }
 
+void foo(int& val)
+{
+    val++;
+    std::cout << val << '\n';
+}
+
 int main()
 {
-    ThreadCpp11Test();
+    int v = 10;
+    //    std::cout << &v << '\n';
+    //    foo(v);
+    std::thread th(foo, std::ref(v));
+
+    th.join();
     return 0;
 }
