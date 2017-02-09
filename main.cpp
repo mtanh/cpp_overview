@@ -29,6 +29,8 @@
 #include "rationalutils.h"
 #include "copyandswap.h"
 #include "avoireturnhandletointernalclassresource.h"
+#include <design_pattern/prototype.h>
+
 #include <kernelcomp.h>
 #include <httpeventcomp.h>
 #include <threadcpp11.h>
@@ -109,13 +111,34 @@ void foo(int& val)
     std::cout << val << '\n';
 }
 
+void DP_PrototypeTest()
+{
+    Factory f;
+    f.initialize();
+
+    Prototype* huge1 = f.genHugeClass(one);
+    std::cout << "Done\n";
+
+    Prototype* huge11 = f.genHugeClass(one);
+    std::cout << "Done\n";
+
+    delete huge1; huge1 = NULL;
+    delete huge11; huge11 = NULL;
+    f.terminate();
+
+//    Prototype* aaa = new HugeClass1;
+//    std::cout << "Done\n";
+
+//    Prototype* bbb = new HugeClass1;
+//    std::cout << "Done\n";
+
+//    delete aaa;
+//    delete bbb;
+}
+
 int main()
 {
-    int v = 10;
-    //    std::cout << &v << '\n';
-    //    foo(v);
-    std::thread th(foo, std::ref(v));
+    DP_PrototypeTest();
 
-    th.join();
     return 0;
 }

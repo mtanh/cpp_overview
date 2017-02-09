@@ -13,7 +13,8 @@ SOURCES += main.cpp \
     comp_kernel/eventapi.cpp \
     comp_kernel/kernelcomp.cpp \
     comp_kernel/event_comp/httpeventcomp.cpp \
-    threadcpp11.cpp
+    threadcpp11.cpp \
+    design_pattern/prototype.cpp
 QMAKE_CXXFLAGS += -std=c++11 -pthread
 LIBS += -pthread
 
@@ -31,5 +32,6 @@ HEADERS += \
     comp_kernel/throwable.h \
     comp_kernel/kernelcomp.h \
     comp_kernel/httpeventcomp.h \
-    threadcpp11.h
+    threadcpp11.h \
+    design_pattern/prototype.h
 
